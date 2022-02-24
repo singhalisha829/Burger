@@ -2,10 +2,10 @@ import React from "react";
 
 import classes from './Order.css';
 
-const order =(props) =>(
+const orders =(props) =>(
     <div className={classes.Order}>
         <p>meow</p>
     </div>
 )
 
-export default order;
+export default orders;
