@@ -1,6 +1,7 @@
 import React ,{ Component} from 'react';
 import Button from '../../../components/UI/Button/Button';
 import axios from '../../../axios-orders';
+import { connect } from 'react-redux';
 
 import classes from '../ContactData/ContactData.css';
 import Spinner from '../../../components/UI/Spinner/Spinner';
