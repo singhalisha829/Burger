@@ -10,13 +10,15 @@ import thunk from 'redux-thunk';
 import { BrowserRouter } from 'react-router-dom';
 import burgerBuilderReducer from './Store/reducers/BurgerBuilder';
 import orderReducer from './Store/reducers/order';
+import authReducer from './Store/reducers/auth';
 
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
     burgerBuilder: burgerBuilderReducer,
-    order: orderReducer
+    order: orderReducer,
+    auth: authReducer
 });
 
 const store= createStore(rootReducer, composeEnhancers(
