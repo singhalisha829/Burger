@@ -6,6 +6,7 @@ import classes from '../Auth/Auth.css';
 import * as actions from '../../Store/actions/index';
 import { connect } from 'react-redux';
 import Spinner from '../../components/UI/Spinner/Spinner';
+import { Redirect } from 'react-router-dom';
 
 class Auth extends Component{
     state={
@@ -38,9 +39,21 @@ class Auth extends Component{
                 valid: false,
                 touched:false
             },
-            
+            user:{
+                elementType:'input',
+                elementConfig:{
+                    type:'text',
+                    placeholder:'Display Name'
+                },
+                value:'',
+                validation:{
+                },
+                valid: false,
+                touched:false
+            },
         },
         isSignup: true
+        
     }
 
     checkValidity(value, rules){
@@ -82,7 +95,7 @@ class Auth extends Component{
 
     submitHandler = (event) =>{
         event.preventDefault();
-        this.props.onAuth(this.state.controls.email.value, this.state.controls.password.value, this.state.isSignup)
+        this.props.onAuth(this.state.controls.email.value, this.state.controls.password.value, this.state.isSignup,this.state.controls.user.value)
     }
 
     switchAuthModeHandler = () =>{
@@ -120,8 +133,14 @@ class Auth extends Component{
                 <p>{this.props.error.message}</p>
             );
         }
+
+        let authRedirect = null;
+        if(this.props.isAuthenticated){
+            authRedirect= <Redirect to="/" />
+        }
         return(
             <div className={classes.ContactData}>
+                {authRedirect}
                 {errorMessage}
                 <form onSubmit={this.submitHandler}>
                     {form}
@@ -137,12 +156,13 @@ class Auth extends Component{
 const mapStateToProps = state =>{
     return{
         loading:state.auth.loading,
-        error:state.auth.error
+        error:state.auth.error,
+        isAuthenticated: state.auth.token !== null
     }
 }
 const mapDispatchToProps = dispatch =>{
     return{
-        onAuth: (email,password ,isSignup) =>dispatch(actions.auth(email,password ,isSignup))
+        onAuth: (email,password ,isSignup,user) =>dispatch(actions.auth(email,password ,isSignup,user))
     }
 }
 

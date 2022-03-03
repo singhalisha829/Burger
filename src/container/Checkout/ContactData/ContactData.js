@@ -98,7 +98,8 @@ class ContactData extends Component{
             },
         },
         // loading: false,
-        formIsValid: false
+        formIsValid: false,
+        // user:null
     }
 
     orderHandler= (event) =>{
@@ -112,7 +113,7 @@ class ContactData extends Component{
                 price: this.props.price,
                 orderData: formData
         }
-        this.props.onOrderBurger(order);
+        this.props.onOrderBurger(order, this.props.token);
             // axios.post('/orders.json',order)
             // .then(response => {
             //     this.setState({loading:false})
@@ -163,7 +164,7 @@ class ContactData extends Component{
         for(let inputIdentifier in updatedOrderForm){
             formIsValid= updatedOrderForm[inputIdentifier].valid && formIsValid;
         }
-        this.setState({orderForm:updatedOrderForm, formIsValid: formIsValid})
+        this.setState({orderForm:updatedOrderForm, formIsValid: formIsValid, user:this.props.user})
     }
     render(){
         const formElementsArray = [];
@@ -203,13 +204,14 @@ const mapStateToProps = state =>{
     return{
         ings:state.burgerBuilder.ingredients,
         price:state.burgerBuilder.totalPrice,
-        loading:state.order.loading
+        loading:state.order.loading,
+        token: state.auth.token
     }
 }
 
 const mapDispatchToProps = dispatch =>{
     return{
-        onOrderBurger: (orderData) => dispatch(actions.purchaseBurger(orderData))
+        onOrderBurger: (orderData ,token) => dispatch(actions.purchaseBurger(orderData ,token))
     }
 }
 
