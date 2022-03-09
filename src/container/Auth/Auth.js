@@ -39,18 +39,6 @@ class Auth extends Component{
                 valid: false,
                 touched:false
             },
-            user:{
-                elementType:'input',
-                elementConfig:{
-                    type:'text',
-                    placeholder:'Display Name'
-                },
-                value:'',
-                validation:{
-                },
-                valid: false,
-                touched:false
-            },
         },
         isSignup: true
         
@@ -95,7 +83,7 @@ class Auth extends Component{
 
     submitHandler = (event) =>{
         event.preventDefault();
-        this.props.onAuth(this.state.controls.email.value, this.state.controls.password.value, this.state.isSignup,this.state.controls.user.value)
+        this.props.onAuth(this.state.controls.email.value, this.state.controls.password.value, this.state.isSignup)
     }
 
     switchAuthModeHandler = () =>{
