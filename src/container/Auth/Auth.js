@@ -136,6 +136,7 @@ class Auth extends Component{
         return(
             <div className={classes.ContactData}>
                 {authRedirect}
+                <strong>{this.state.isSignup?'REGISTER': 'LOG IN'}</strong>
                 {errorMessage}
                 <form onSubmit={this.submitHandler}>
                     {form}
