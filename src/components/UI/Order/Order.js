@@ -4,6 +4,7 @@ import classes from './Order.css';
 import Burger from '../../Burger/Burger';
 import BurgerIngredient from '../../Burger/BurgerIngredients/BurgerIngredients';
 
+
 const order = ( props ) => {
     //for burger
     let transformedIngredients= Object.keys(props.ingredients)
@@ -43,15 +44,20 @@ const order = ( props ) => {
     });
 
     return (
+      
         <div className={classes.Order}>
+            <div className={classes.burger_ing}>
              <div className={classes.Burger}>
             <BurgerIngredient type='bread-top' />
             {transformedIngredients}
             <BurgerIngredient type='bread-bottom' />
         </div>
-            <p><strong>Ingredients:</strong> {ingredientOutput}</p>
+            <p><strong>Ingredients:</strong> {ingredientOutput}</p></div>   
+            <div className={classes.burger_ing}>
             <p><strong>Price: </strong>USD {Number.parseFloat( props.price ).toFixed( 2 )}</p>
+            {props.onFavPage?<p>Reorder</p>: null}</div>
         </div>
+        
     );
 };
 

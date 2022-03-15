@@ -13,6 +13,7 @@ class Orders extends Component {
     //     orders: [],
     //     loading: true
     // }
+    onFavPage=false;
 
     componentDidMount() {
         // axios.get('/orders.json')
@@ -40,7 +41,8 @@ class Orders extends Component {
                     <Order 
                         key={order.id}
                         ingredients={order.ingredients}
-                        price={order.price} />
+                        price={order.price}
+                        onFavPage={this.onFavPage} />
                 ))}
             </div>)
         }

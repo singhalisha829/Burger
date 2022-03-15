@@ -5,6 +5,7 @@ import Checkout from './container/Checkout/Checkout';
 import Orders from './container/Orders/Orders';
 import Auth from './container/Auth/Auth';
 import Logout from './container/Auth/Logout/Logout';
+import Favourites from './container/Favourites/Favourites';
 
 import { connect } from 'react-redux';
 import { Route , Switch ,withRouter , Redirect} from 'react-router-dom';
@@ -28,6 +29,7 @@ class App extends Component {
             <Route path='/orders' component={Orders} />
             <Route path='/auth' component={Auth} />       
             <Route path='/logout' component={Logout} />
+            <Route path='/favs' component={Favourites} />
             <Route path='/' exact component={BurgerBuilder} />
             <Redirect to='/' />
       </Switch>)
