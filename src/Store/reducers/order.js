@@ -4,7 +4,8 @@ import { updateObject } from '../../shared/utility';
 const initialState={
     orders:[],
     loading:false,
-    purchased:false 
+    purchased:false,
+    isFav:false
 };
 
 const reducer =(state=initialState, action) =>{
@@ -18,10 +19,13 @@ const reducer =(state=initialState, action) =>{
             return updateObject(state,{
                 loading:false,
                 purchased:true,
+                isFav:false,
                 orders:state.orders.concat(newOrder)
             })
+        case actionTypes.FAV_CLICKED:
+            return updateObject(state, { isFav: !action.isFav});
         case actionTypes.PURCHASE_BURGER_FAIL:
-            return updateObject(state,{ loading:false });
+            return updateObject(state,{ loading:false, isFav:false });
         case actionTypes.FETCH_ORDERS_START:
             return updateObject(state,{ loading:true });
         case actionTypes.FETCH_ORDERS_SUCCESS:

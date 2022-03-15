@@ -16,6 +16,13 @@ export const purchaseBurgerFail = (error) =>{ //synchronous
     }
 }
 
+export const favClicked = (isFav) =>{
+    return{
+        type:actionTypes.FAV_CLICKED,
+        isFav:isFav
+    }
+}
+
 export const purchaseBurgerStart = () =>{ 
     return{
         type: actionTypes.PURCHASE_BURGER_START,
