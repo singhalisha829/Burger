@@ -3,6 +3,9 @@ import React from 'react';
 import classes from './Order.css';
 import Burger from '../../Burger/Burger';
 import BurgerIngredient from '../../Burger/BurgerIngredients/BurgerIngredients';
+import { Link } from 'react-router-dom';
+import Button from '../Button/Button';
+
 
 
 const order = ( props ) => {
@@ -55,7 +58,9 @@ const order = ( props ) => {
             <p><strong>Ingredients:</strong> {ingredientOutput}</p></div>   
             <div className={classes.burger_ing}>
             <p><strong>Price: </strong>USD {Number.parseFloat( props.price ).toFixed( 2 )}</p>
-            {props.onFavPage?<p>Reorder</p>: null}</div>
+            {props.onFavPage?<Link className={classes.link} to='/checkout' params={{ingredients:props.ingredients}}>Reorder</Link>: null}
+            {/* {props.onFavPage?<Button btnType="Success" clicked={console.log(props.ingredients)}>Reorder</Button>: null} */}
+            </div>
         </div>
         
     );

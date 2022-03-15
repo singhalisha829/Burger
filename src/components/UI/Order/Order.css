@@ -23,6 +23,9 @@
   font-size: 1.2rem;
 }
 
+.link {
+  color: green;
+}
 @media (min-width: 500px) and (min-height: 400px) {
   .Burger {
     width: 200px;

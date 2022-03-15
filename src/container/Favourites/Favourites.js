@@ -31,7 +31,8 @@ class Favourites extends Component{
                         key={order.id}
                         ingredients={order.ingredients}
                         price={order.price} 
-                        onFavPage={this.onFavPage}/>
+                        onFavPage={this.onFavPage}
+                        />
                 ))}
             </div>)
         }
