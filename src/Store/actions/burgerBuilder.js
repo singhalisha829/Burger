@@ -29,6 +29,14 @@ export const setIngredients = (ingredients) =>{
     }
 }
 
+export const favReorder = (ingredients,price) =>{
+    return{
+        type: actionTypes.FAV_REORDER,
+        ingredients: ingredients,
+        price:price
+    }
+}
+
 export const initIngredients = () =>{
     return dispatch =>{
         axios.get('https://my-burger-3b88c-default-rtdb.firebaseio.com/ingredients.json')

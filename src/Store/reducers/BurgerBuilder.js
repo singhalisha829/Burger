@@ -51,6 +51,18 @@ const reducer = (state=initialState,action) =>{
             return updateObject(state,{
                 error: true
             })
+        case actionTypes.FAV_REORDER:
+            return updateObject(state, {
+                ingredients:{
+                    salad: action.ingredients.salad,
+                    bacon: action.ingredients.bacon,
+                    cheese: action.ingredients.cheese,
+                    meat: action.ingredients.meat
+                },
+                totalPrice:action.price,
+                error: false,
+                building:false
+            });
         default:
             return state;
     }

@@ -3,8 +3,10 @@ import React from 'react';
 import classes from './Order.css';
 import Burger from '../../Burger/Burger';
 import BurgerIngredient from '../../Burger/BurgerIngredients/BurgerIngredients';
-import { Link } from 'react-router-dom';
-import Button from '../Button/Button';
+import { Link, Redirect } from 'react-router-dom';
+import { useDispatch } from "react-redux";
+import * as actions from '../../../Store/actions/index';
+import { setIngredients } from '../../../Store/actions/burgerBuilder';
 
 
 
@@ -34,6 +36,7 @@ const order = ( props ) => {
         );
     }
 
+    // console.log(ingredients)
     const ingredientOutput = ingredients.map(ig => {
         return <span 
             style={{
@@ -45,6 +48,12 @@ const order = ( props ) => {
                 }}
             key={ig.name}>{ig.name} ({ig.amount})</span>;
     });
+
+    const dispatch = useDispatch();
+    const setIngredients =(args,price) =>{
+        dispatch(actions.favReorder(args,price));
+        <Redirect to='/checkout' />
+    }
 
     return (
       
@@ -58,12 +67,13 @@ const order = ( props ) => {
             <p><strong>Ingredients:</strong> {ingredientOutput}</p></div>   
             <div className={classes.burger_ing}>
             <p><strong>Price: </strong>USD {Number.parseFloat( props.price ).toFixed( 2 )}</p>
-            {props.onFavPage?<Link className={classes.link} to='/checkout' params={{ingredients:props.ingredients}}>Reorder</Link>: null}
-            {/* {props.onFavPage?<Button btnType="Success" clicked={console.log(props.ingredients)}>Reorder</Button>: null} */}
+            {props.onFavPage?<Link className={classes.link} to='/checkout' onClick={setIngredients.bind(this,props.ingredients,props.price)}>Reorder</Link>: null}
             </div>
         </div>
         
     );
 };
 
+
+    
 export default order;
