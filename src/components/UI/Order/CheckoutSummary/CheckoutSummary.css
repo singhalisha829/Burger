@@ -9,3 +9,33 @@
         width: 500px;
     }
 } */
+
+.CheckoutSummary div img {
+  width: 40%;
+  height: 60%;
+  margin-right: 10;
+  margin-left: 5;
+  margin-bottom: 0;
+  margin-top: 12;
+}
+
+@media (min-width: 500px) and (min-height: 400px) {
+  .img {
+    width: 350px;
+    height: 300px;
+  }
+}
+
+@media (min-width: 500px) and (min-height: 401px) {
+  .img {
+    width: 450px;
+    height: 400px;
+  }
+}
+
+@media (min-width: 1000px) and (min-height: 700px) {
+  .img {
+    width: 700px;
+    height: 600px;
+  }
+}

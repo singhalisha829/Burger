@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 
 import Aux from "../../hoc/Aux";
 import Burger from "../../components/Burger/Burger";
+import classes from '../BurgerBuilder/BurgerBuilder.css';
 import BuildControls from "../../components/Burger/BuildControls/BuildControls";
 import Modal from "../../components/UI/Modal/Modal";
 import OrderSummary from "../../components/Burger/OrderSummary/OrderSummary";
@@ -163,7 +164,7 @@ class BurgerBuilder extends Component{
         // }
         return(
             <Aux>
-                <Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHandler}>
+                <Modal style={classes.modal} show={this.state.purchasing} modalClosed={this.purchaseCancelHandler}>
                    {orderSummary} 
                 </Modal>
                 {burger}
