@@ -51,9 +51,13 @@ const reducer = (state=initialState,action) =>{
             return updateObject(state,{
                 error: true
             })
-        case actionTypes.ORDER_COKE:
+        case actionTypes.ADD_COKE:
             return updateObject(state,{
                 totalPrice:state.totalPrice+2
+            })
+        case actionTypes.REMOVE_COKE:
+            return updateObject(state,{
+                totalPrice:state.totalPrice-2
             })
         case actionTypes.FAV_REORDER:
             return updateObject(state, {

@@ -1,4 +1,4 @@
-export { addIngredient ,removeIngredient ,initIngredients ,favReorder, orderCoke} from './burgerBuilder';
+export { addIngredient, removeCoke ,removeIngredient ,initIngredients ,favReorder, addCoke} from './burgerBuilder';
 
 export { purchaseBurger, setCoke,favClicked , purchaseInit, fetchOrder} from './order';
 

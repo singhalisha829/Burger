@@ -22,9 +22,16 @@ export const fetchIngredientsFailed = () =>{
     }
 }
 
-export const orderCoke=(totalPrice)=>{
+export const addCoke=(totalPrice)=>{
     return{
-        type:actionTypes.ORDER_COKE,
+        type:actionTypes.ADD_COKE,
+        totalPrice:totalPrice
+    }
+}
+
+export const removeCoke=(totalPrice)=>{
+    return{
+        type:actionTypes.REMOVE_COKE,
         totalPrice:totalPrice
     }
 }

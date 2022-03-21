@@ -28,5 +28,6 @@ export const FAV_CLICKED= 'FAV_CLICKED';
 export const FAV_REORDER='FAV_REORDER';
 
 export const IS_COKE='IS_COKE';
-export const ORDER_COKE='ORDER_COKE';
+export const ADD_COKE='ADD_COKE';
+export const REMOVE_COKE='REMOVE_COKE';
 

@@ -13,7 +13,11 @@ const checkoutSummary =(props) =>{
     const dispatch = useDispatch();
     const handleOnChange = () =>{
         dispatch(actions.setCoke(props.isCoke))
-        dispatch(actions.orderCoke(props.price))
+        if(!props.isCoke){
+        dispatch(actions.addCoke(props.price))
+        }else{  
+        dispatch(actions.removeCoke(props.price))
+        }
     }
     return(
         <div className={classes.CheckoutSummary}>
@@ -24,8 +28,8 @@ const checkoutSummary =(props) =>{
             </div>
             <p>Complete your meal with...<br/>
             <input type="checkbox" id="fav" name="fav"
-          onChange={handleOnChange} /> Coke</p><br/>
-          <p>{props.isCoke?<strong>Total Price: {props.price.toFixed(2)} </strong>: null}</p>
+          onChange={handleOnChange} /> Coke</p>
+          <p><strong>Total Price: {props.price.toFixed(2)} </strong></p>
             <Button btnType="Danger" clicked={props.checkoutCancelled}>CANCEL</Button>
             <Button btnType="Success" clicked={props.checkoutContinued}>CONTINUE</Button>
             
