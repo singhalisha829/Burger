@@ -40,11 +40,12 @@ const checkoutSummary =(props) =>{
                 {props.isCoke?<img src={coke}  />: null}
                 {props.isFries?<img src={fries} />:null}
             </div>
+            <div className={classes.Box}>
             <p>Complete your meal with...<br/>
             <input type="checkbox" id="fav" name="fav"
           onChange={onClickingCoke} /> Coke <br/>  
           <input type="checkbox" id="fav" name="fav"
-          onChange={onClickingFries} /> Fries</p>
+          onChange={onClickingFries} /> Fries</p></div>
           <p><strong>Total Price: {props.price.toFixed(2)} </strong></p>
             <Button btnType="Danger" clicked={props.checkoutCancelled}>CANCEL</Button>
             <Button btnType="Success" clicked={props.checkoutContinued}>CONTINUE</Button>

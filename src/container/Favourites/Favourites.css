@@ -1,0 +1,15 @@
+.fav {
+  text-align: center;
+  width: 80%;
+  margin: auto;
+}
+
+.fav img {
+  width: 60%;
+  height: 60%;
+  margin-right: 10;
+  margin-left: 5;
+  margin-bottom: 0;
+  margin-top: 12;
+  opacity: 70%;
+}

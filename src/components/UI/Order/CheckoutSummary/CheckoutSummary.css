@@ -19,6 +19,22 @@
   margin-top: 12;
 }
 
+.Box {
+  margin: 20px auto;
+  width: 80%;
+  text-align: center;
+  box-shadow: 0 2px 3px #ccc;
+  border: 1px solid #eee;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 600px) {
+  .Box {
+    width: 500px;
+  }
+}
+
 @media (min-width: 500px) and (min-height: 400px) {
   .img {
     width: 350px;

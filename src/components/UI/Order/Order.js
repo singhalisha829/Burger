@@ -68,6 +68,7 @@ const order = ( props ) => {
             <p><strong>Ingredients:</strong> {ingredientOutput}</p></div>   
             <div className={classes.burger_ing}>
             <p><strong>Price: </strong>USD {Number.parseFloat( props.price ).toFixed( 2 )}</p>
+            <Link to='' className={classes.view}>View</Link>
             {props.onFavPage?<Link className={classes.link} to='/checkout' onClick={setIngredients.bind(this,props.ingredients,props.price)}>Reorder</Link>: null}
             </div>
         </div>

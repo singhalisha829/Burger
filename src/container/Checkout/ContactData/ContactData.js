@@ -115,7 +115,9 @@ class ContactData extends Component{
                 orderData: formData,
                 isFav:this.props.isFav,
                 isCoke:this.props.isCoke,
-                userId:this.props.userId
+                isFries:this.props.isFries,
+                userId:this.props.userId,
+                date:new Date()
         }
         this.props.onOrderBurger(order, this.props.token);
             // axios.post('/orders.json',order)
@@ -213,6 +215,7 @@ const mapStateToProps = state =>{
         token: state.auth.token,
         isFav:state.order.isFav,
         isCoke:state.order.isCoke,
+        isFries:state.order.isFries,
         userId: state.auth.userId
     }
 }

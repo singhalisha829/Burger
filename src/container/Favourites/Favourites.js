@@ -5,6 +5,8 @@ import axios from '../../axios-orders';
 import errorHandler from '../../hoc/ErrorHandler/ErrorHandler';
 import * as actions from '../../Store/actions/index';
 import { connect } from 'react-redux';
+import fav from '../../assets/images/fav.png';
+import classes from '../Favourites/Favourites.css';
 
 import Spinner from '../../components/UI/Spinner/Spinner';
 
@@ -34,6 +36,12 @@ class Favourites extends Component{
                         onFavPage={this.onFavPage}
                         />
                 ))}
+            </div>)
+        }
+        if(favOrders.length === 0){
+            order=(<div className={classes.fav}>
+                <img src={fav}/>
+                <p>No Favourites Yet!<space/>;(</p>
             </div>)
         }
         return order;
