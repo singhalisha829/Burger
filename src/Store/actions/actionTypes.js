@@ -31,3 +31,7 @@ export const IS_COKE='IS_COKE';
 export const ADD_COKE='ADD_COKE';
 export const REMOVE_COKE='REMOVE_COKE';
 
+export const IS_FRIES='IS_FRIES';
+export const ADD_FRIES='ADD_FRIES';
+export const REMOVE_FRIES='REMOVE_FRIES';
+

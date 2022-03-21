@@ -30,6 +30,13 @@ export const setCoke = (isCoke) =>{
     }
 }
 
+export const setFries = (isFries) =>{
+    return{
+        type:actionTypes.IS_FRIES,
+        isFries:isFries
+    }
+}
+
 export const purchaseBurgerStart = () =>{ 
     return{
         type: actionTypes.PURCHASE_BURGER_START,

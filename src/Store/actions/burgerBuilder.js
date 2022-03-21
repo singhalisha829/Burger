@@ -36,6 +36,20 @@ export const removeCoke=(totalPrice)=>{
     }
 }
 
+export const addFries=(totalPrice)=>{
+    return{
+        type:actionTypes.ADD_FRIES,
+        totalPrice:totalPrice
+    }
+}
+
+export const removeFries=(totalPrice)=>{
+    return{
+        type:actionTypes.REMOVE_FRIES,
+        totalPrice:totalPrice
+    }
+}
+
 export const setIngredients = (ingredients) =>{
     return{
         type: actionTypes.SET_INGREDIENTS,

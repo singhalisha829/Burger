@@ -59,6 +59,14 @@ const reducer = (state=initialState,action) =>{
             return updateObject(state,{
                 totalPrice:state.totalPrice-2
             })
+        case actionTypes.ADD_FRIES:
+            return updateObject(state,{
+                totalPrice:state.totalPrice+3
+            })
+        case actionTypes.REMOVE_FRIES:
+            return updateObject(state,{
+                totalPrice:state.totalPrice-3
+            })
         case actionTypes.FAV_REORDER:
             return updateObject(state, {
                 ingredients:{
