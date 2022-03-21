@@ -22,6 +22,13 @@ export const fetchIngredientsFailed = () =>{
     }
 }
 
+export const orderCoke=(totalPrice)=>{
+    return{
+        type:actionTypes.ORDER_COKE,
+        totalPrice:totalPrice
+    }
+}
+
 export const setIngredients = (ingredients) =>{
     return{
         type: actionTypes.SET_INGREDIENTS,

@@ -22,7 +22,7 @@ class OrderSummary extends Component{
             <p>A delicious burger with following ingredients:</p>
             <ul>{ingredientSummary}</ul>
             <p><strong>Total Price: {this.props.price.toFixed(2)}</strong></p>
-            <p>Complete your meal with...<br/></p><hr/>
+           
             <p><input type="checkbox" id="fav" name="fav"
           onChange={handleOnChange} /> Add To Favourites</p>
             <p>Continue to Checkout?</p>

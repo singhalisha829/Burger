@@ -22,6 +22,14 @@ export const favClicked = (isFav) =>{
         isFav:isFav
     }
 }
+
+export const setCoke = (isCoke) =>{
+    return{
+        type:actionTypes.IS_COKE,
+        isCoke:isCoke
+    }
+}
+
 export const purchaseBurgerStart = () =>{ 
     return{
         type: actionTypes.PURCHASE_BURGER_START,
